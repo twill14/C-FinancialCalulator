@@ -17,47 +17,64 @@ namespace InvoiceTotal
             InitializeComponent();
         }
 
+        private int numberOfInvoices = 0;
+        private decimal totalOfInvoices = 0m;
+        private decimal invoiceAverage = 0m;
+        private decimal largestInvoice = 0m;
+        private decimal smallestInvoice = 0m;
+
         private void btnCalculate_Click(object sender, EventArgs e)
         {
 
-            // recieve subtotal from user
-            decimal subtotal = Convert.ToDecimal(txtSubtotal.Text);
+            decimal subTotal = Decimal.Parse(txtEnterSubtotal.Text);
+            decimal discountPercent = .25m;
+            decimal discountAmount = Math.Round(subTotal*discountPercent, 2);
+            decimal invoiceTotal = subTotal - discountAmount;
 
-            //initialize discountPercent and set decimal based on subtotal value
-            decimal discountPercent = 0m;
-
-            if (subtotal >= 500)
-            {
-                discountPercent = .2m;
-            }
-            else if (subtotal >= 250 && subtotal < 500)
-            {
-                discountPercent = .15m;
-            }
-            else if (subtotal >= 100 && subtotal < 250)
-            {
-                discountPercent = .1m;
-            }
-
-            //calculate and assign values for the discountAmount and invoiceTotals
-
-            decimal discountAmount = subtotal*discountPercent;
-            decimal invoiceTotal = subtotal - discountAmount;
-
-
-            //format all form values
+            txtSubtotal.Text = subTotal.ToString("c");
             txtDiscountPercent.Text = discountPercent.ToString("p1");
             txtDiscountAmount.Text = discountAmount.ToString("c");
             txtTotal.Text = invoiceTotal.ToString("c");
 
+            numberOfInvoices++;
+            totalOfInvoices += invoiceTotal;
+            invoiceAverage = totalOfInvoices/numberOfInvoices;
 
-            //move focus back to the subtotal text box
-            txtSubtotal.Focus();
+            smallestInvoice = smallestInvoice != 0 ? Math.Min(invoiceTotal, smallestInvoice) : invoiceTotal;
+
+            largestInvoice = Math.Max(invoiceTotal, largestInvoice);
+
+            txtNumberofInvoices.Text = numberOfInvoices.ToString();
+            txtTotalOfInvoices.Text = totalOfInvoices.ToString("c");
+            txtInvoiceAverage.Text = invoiceAverage.ToString("c");
+            txtSmallestInvoice.Text = smallestInvoice.ToString("c");
+            txtLargestInvoice.Text = largestInvoice.ToString("c");
+
+            txtEnterSubtotal.Text = "";
+            txtEnterSubtotal.Focus();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            numberOfInvoices = 0;
+            totalOfInvoices = 0m;
+            invoiceAverage = 0m;
+            largestInvoice = 0m;
+
+            txtNumberofInvoices.Text = "";
+            txtTotalOfInvoices.Text = "";
+            txtInvoiceAverage.Text = "";
+            txtSmallestInvoice.Text = "";
+            txtLargestInvoice.Text = "";
+            txtEnterSubtotal.Focus();
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }
