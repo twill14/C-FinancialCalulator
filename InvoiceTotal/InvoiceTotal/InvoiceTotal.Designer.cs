@@ -51,12 +51,14 @@
             this.txtSmallestInvoice = new System.Windows.Forms.TextBox();
             this.lblLargestInvoice = new System.Windows.Forms.Label();
             this.txtLargestInvoice = new System.Windows.Forms.TextBox();
+            this.lblCustomerType = new System.Windows.Forms.Label();
+            this.txtCustomerType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // subTotal
             // 
             this.subTotal.AutoSize = true;
-            this.subTotal.Location = new System.Drawing.Point(52, 50);
+            this.subTotal.Location = new System.Drawing.Point(52, 87);
             this.subTotal.Name = "subTotal";
             this.subTotal.Size = new System.Drawing.Size(60, 17);
             this.subTotal.TabIndex = 0;
@@ -66,7 +68,7 @@
             // dicountPercent
             // 
             this.dicountPercent.AutoSize = true;
-            this.dicountPercent.Location = new System.Drawing.Point(52, 87);
+            this.dicountPercent.Location = new System.Drawing.Point(52, 124);
             this.dicountPercent.Name = "dicountPercent";
             this.dicountPercent.Size = new System.Drawing.Size(120, 17);
             this.dicountPercent.TabIndex = 0;
@@ -76,7 +78,7 @@
             // discountAmount
             // 
             this.discountAmount.AutoSize = true;
-            this.discountAmount.Location = new System.Drawing.Point(52, 123);
+            this.discountAmount.Location = new System.Drawing.Point(52, 160);
             this.discountAmount.Name = "discountAmount";
             this.discountAmount.Size = new System.Drawing.Size(119, 17);
             this.discountAmount.TabIndex = 0;
@@ -86,7 +88,7 @@
             // total
             // 
             this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(52, 159);
+            this.total.Location = new System.Drawing.Point(52, 196);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(40, 17);
             this.total.TabIndex = 0;
@@ -95,7 +97,7 @@
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(178, 50);
+            this.txtSubtotal.Location = new System.Drawing.Point(178, 87);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(100, 22);
@@ -104,7 +106,7 @@
             // 
             // txtDiscountPercent
             // 
-            this.txtDiscountPercent.Location = new System.Drawing.Point(178, 87);
+            this.txtDiscountPercent.Location = new System.Drawing.Point(178, 124);
             this.txtDiscountPercent.Name = "txtDiscountPercent";
             this.txtDiscountPercent.ReadOnly = true;
             this.txtDiscountPercent.Size = new System.Drawing.Size(100, 22);
@@ -113,7 +115,7 @@
             // 
             // txtDiscountAmount
             // 
-            this.txtDiscountAmount.Location = new System.Drawing.Point(178, 120);
+            this.txtDiscountAmount.Location = new System.Drawing.Point(178, 157);
             this.txtDiscountAmount.Name = "txtDiscountAmount";
             this.txtDiscountAmount.ReadOnly = true;
             this.txtDiscountAmount.Size = new System.Drawing.Size(100, 22);
@@ -122,7 +124,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(178, 159);
+            this.txtTotal.Location = new System.Drawing.Point(178, 196);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
@@ -131,7 +133,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(311, 204);
+            this.btnCalculate.Location = new System.Drawing.Point(315, 208);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(90, 23);
             this.btnCalculate.TabIndex = 2;
@@ -142,7 +144,7 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(512, 204);
+            this.btnExit.Location = new System.Drawing.Point(516, 208);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -152,7 +154,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(407, 204);
+            this.btnClear.Location = new System.Drawing.Point(411, 208);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(99, 23);
             this.btnClear.TabIndex = 4;
@@ -163,7 +165,7 @@
             // lblEnterSubtotal
             // 
             this.lblEnterSubtotal.AutoSize = true;
-            this.lblEnterSubtotal.Location = new System.Drawing.Point(52, 13);
+            this.lblEnterSubtotal.Location = new System.Drawing.Point(52, 50);
             this.lblEnterSubtotal.Name = "lblEnterSubtotal";
             this.lblEnterSubtotal.Size = new System.Drawing.Size(98, 17);
             this.lblEnterSubtotal.TabIndex = 5;
@@ -171,7 +173,7 @@
             // 
             // txtEnterSubtotal
             // 
-            this.txtEnterSubtotal.Location = new System.Drawing.Point(178, 13);
+            this.txtEnterSubtotal.Location = new System.Drawing.Point(178, 50);
             this.txtEnterSubtotal.Name = "txtEnterSubtotal";
             this.txtEnterSubtotal.Size = new System.Drawing.Size(100, 22);
             this.txtEnterSubtotal.TabIndex = 1;
@@ -264,6 +266,22 @@
             this.txtLargestInvoice.Size = new System.Drawing.Size(100, 22);
             this.txtLargestInvoice.TabIndex = 14;
             // 
+            // lblCustomerType
+            // 
+            this.lblCustomerType.AutoSize = true;
+            this.lblCustomerType.Location = new System.Drawing.Point(52, 18);
+            this.lblCustomerType.Name = "lblCustomerType";
+            this.lblCustomerType.Size = new System.Drawing.Size(104, 17);
+            this.lblCustomerType.TabIndex = 15;
+            this.lblCustomerType.Text = "Customer Type";
+            // 
+            // txtCustomerType
+            // 
+            this.txtCustomerType.Location = new System.Drawing.Point(178, 18);
+            this.txtCustomerType.Name = "txtCustomerType";
+            this.txtCustomerType.Size = new System.Drawing.Size(100, 22);
+            this.txtCustomerType.TabIndex = 16;
+            // 
             // InvoiceTotal
             // 
             this.AcceptButton = this.btnCalculate;
@@ -271,6 +289,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(615, 253);
+            this.Controls.Add(this.txtCustomerType);
+            this.Controls.Add(this.lblCustomerType);
             this.Controls.Add(this.txtLargestInvoice);
             this.Controls.Add(this.lblLargestInvoice);
             this.Controls.Add(this.txtSmallestInvoice);
@@ -327,6 +347,8 @@
         private System.Windows.Forms.TextBox txtSmallestInvoice;
         private System.Windows.Forms.Label lblLargestInvoice;
         private System.Windows.Forms.TextBox txtLargestInvoice;
+        private System.Windows.Forms.Label lblCustomerType;
+        private System.Windows.Forms.TextBox txtCustomerType;
     }
 }
 

@@ -30,6 +30,25 @@ namespace InvoiceTotal
             decimal discountPercent = .25m;
             decimal discountAmount = Math.Round(subTotal*discountPercent, 2);
             decimal invoiceTotal = subTotal - discountAmount;
+            string customerType = txtCustomerType.Text;
+
+            switch (customerType)
+            {
+                case "R":
+                    if (subTotal < 100)
+                        discountPercent = .0m;
+                    else if (subTotal >= 100 && subTotal < 250)
+                        discountPercent = .1m;
+                    else if (subTotal >= 250)
+                        discountPercent = .25m;
+                    break;
+                case "C":
+                    discountPercent = subTotal < 250 ? .2m : .3m;
+                    break;
+                default:
+                    discountPercent = .4m;
+                    break;
+            }
 
             txtSubtotal.Text = subTotal.ToString("c");
             txtDiscountPercent.Text = discountPercent.ToString("p1");
